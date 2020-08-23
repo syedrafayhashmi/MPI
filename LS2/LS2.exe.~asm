@@ -1,11 +1,11 @@
 .MODEL  SMALL
 .STACK  100h
 .DATA
-	BT1  DB  7Dh
-	WD1  DW  0AD3Ch
+BT1  DB  7Dh
+WD1  DW  0AD3Ch
 .CODE
 MAIN PROC
-M0V  AX , @DATA
+MOV  AX , @DATA
 MOV  DS , AX
 MOV  AX , 5642h
 MOV  BX , 0200h
@@ -19,8 +19,13 @@ SAR  WORD PTR[BX] , 1
 NEG  CL
 NOT  DH
 NOP
-INT 3
+INT  3
 MOV  AH , 4Ch
 INT  21h
 MAIN  ENDP
 END MAIN
+
+
+
+
+; [SOURCE]: C:\Users\Rafey\Desktop\TE(6th)\MPI-MIcroprocessor Programming and Interfacing\MPI CODES\LS2\LS2.asm
